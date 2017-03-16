@@ -10,7 +10,7 @@ def long_description():
 
 setup(name='pyalgorithms',
       version='0.1',
-      description='algorithms sets for Python',
+      description='practice python with solving algorithms',
       long_description=long_description(),
       url='https://github.com/wjdsupj/pyalgorithms',
       author='Minhyeok Jung',

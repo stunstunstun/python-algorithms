@@ -1,5 +1,3 @@
-from random import shuffle
-
 import unittest
 
 from pyalgorithms.data_structures import (
@@ -7,9 +5,7 @@ from pyalgorithms.data_structures import (
 )
 
 class TestStack(unittest.TestCase):
-    """
-    Test Stack Implementation
-    """
+
     def test_stack(self):
         self.stack = stack.Stack()
         self.stack.push(2)
@@ -19,4 +15,3 @@ class TestStack(unittest.TestCase):
         self.assertEqual(self.stack.pop(), 6)
         self.assertEqual(self.stack.is_empty(), False)
         self.assertEqual(self.stack.size(), 2)
-
