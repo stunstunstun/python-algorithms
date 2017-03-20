@@ -8,11 +8,11 @@ def long_description():
         readme = f.read()
     return readme
 
-setup(name='pyalgorithms',
+setup(name='src',
       version='0.1',
       description='practice python with solving algorithms',
       long_description=long_description(),
-      url='https://github.com/wjdsupj/pyalgorithms',
+      url='https://github.com/wjdsupj/src',
       author='Minhyeok Jung',
       author_email='wjdsupj@gmail.com',
       license='MIT',

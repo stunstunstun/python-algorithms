@@ -1,3 +1,3 @@
 =====
-pyalgorithms
+awesome-algorithms
 =====

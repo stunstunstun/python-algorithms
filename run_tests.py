@@ -9,7 +9,7 @@ import sys
 import pytest
 
 
-FLAKE8_ARGS = ['pyalgorithms', 'tests']
+FLAKE8_ARGS = ['src', 'tests']
 
 sys.path.append(os.path.dirname(__file__))
 

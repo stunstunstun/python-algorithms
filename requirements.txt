@@ -2,4 +2,3 @@
 # a subset of the requirements check out the requirements directory
 
 -r requirements/requirements-testing.txt
--r requirements/requirements-documentation.txt

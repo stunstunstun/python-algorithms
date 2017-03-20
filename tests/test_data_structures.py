@@ -1,6 +1,6 @@
 import unittest
 
-from pyalgorithms.data_structures import (
+from src.data_structures import (
     stack
 )
 
