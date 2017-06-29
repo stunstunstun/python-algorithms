@@ -1,4 +1,1 @@
-# This will install *all* of the requirements. If you only want to install
-# a subset of the requirements check out the requirements directory
-
--r requirements/requirements-testing.txt
+requests

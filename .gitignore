@@ -5,7 +5,7 @@ algo_venv/
 venv/
 build/
 *~
-/dist/
+dist/
 /*.egg-info
 *.ropeproject/
 docs/_build

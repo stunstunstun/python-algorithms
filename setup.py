@@ -8,8 +8,8 @@ def long_description():
         readme = f.read()
     return readme
 
-setup(name='src',
-      version='0.1',
+setup(name='algorithms',
+      version='0.1.0',
       description='practice python with solving algorithms',
       long_description=long_description(),
       url='https://github.com/stunstunstun/awesome-algorithms',
@@ -17,6 +17,7 @@ setup(name='src',
       author_email='agileboys.com@gmail.com',
       license='MIT',
       packages=find_packages(),
+      python_requires='>=3',
       classifiers=[
           'Programming Language :: Python :: 2.7',
           'Programming Language :: Python :: 3',

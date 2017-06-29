@@ -1,8 +1,7 @@
 import unittest
 
-from src.data_structures import (
-    stack
-)
+from algorithms import stack
+
 
 class TestStack(unittest.TestCase):
 
