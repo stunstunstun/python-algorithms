@@ -8,9 +8,9 @@ def long_description():
         readme = f.read()
     return readme
 
-setup(name='algorithms',
+setup(name='awesome-algorithms',
       version='0.1.0',
-      description='practice python with solving algorithms',
+      description='Practices to solve problems with Python',
       long_description=long_description(),
       url='https://github.com/stunstunstun/awesome-algorithms',
       author='stunstunstun',

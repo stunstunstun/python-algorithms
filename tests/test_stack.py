@@ -1,12 +1,12 @@
 import unittest
 
-from algorithms import stack
+from algorithms import Stack
 
 
 class TestStack(unittest.TestCase):
 
     def test_stack(self):
-        self.stack = stack.Stack()
+        self.stack = Stack()
         self.stack.push(2)
         self.stack.push(4)
         self.stack.push(6)
