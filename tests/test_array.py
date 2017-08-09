@@ -1,5 +1,5 @@
 import unittest
-from algorithms import Array
+from algorithms.array import Array
 
 
 class TestArray(unittest.TestCase):
@@ -7,20 +7,29 @@ class TestArray(unittest.TestCase):
     Create class instance
     """
     def setUp(self):
-        self.array = Array('1 2 3 4 10 11')
-    """
-    Test that the result sum of all numbers
-    """
+        self.array = Array('1 11 98 3 50 72 22 29 99 2')
+
     def test_sum(self):
-        result = self.array.sum(6)
-        self.assertEqual(result, 31)
-    """
-    Tests that an exception occurs when the number of arguments is different
-    """
+        """
+        Test that the result sum of all numbers
+        """
+        result = self.array.sum(10)
+        self.assertEqual(result, 387)
+
     def test_sum_raise_exception(self):
+        """
+        Tests that an exception occurs when the number of arguments is different
+        """
         self.assertRaises(Exception, lambda: self.array.sum(5))
-    """
-    Print array elements
-    """
+
+    def test_rotate(self):
+        self.assertEqual(self.array.rotate(2), [98, 3, 50, 72, 22, 29, 99, 2, 1, 11])
+
+    def test_bubble_sort(self):
+        self.assertEqual(self.array.bubble_sort(), [1, 2, 3, 11, 22, 29, 50, 72, 98, 99])
+
     def tearDown(self):
+        """
+        Print array elements
+        """
         print('length = {}, elements = {}'.format(self.array.__len__(), self.array))

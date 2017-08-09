@@ -1,6 +1,5 @@
 import unittest
-
-from algorithms import Stack
+from algorithms.stack import Stack
 
 
 class TestStack(unittest.TestCase):

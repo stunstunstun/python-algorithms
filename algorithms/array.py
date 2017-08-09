@@ -22,3 +22,17 @@ class Array(object):
         result = sum(self.numbers)
         return result
 
+    def rotate(self, shift):
+        head = shift % len(self.numbers)
+        self.numbers = self.numbers[head:] + self.numbers[:head]
+        return self.numbers
+
+    def bubble_sort(self):
+        for i in range(self.__len__()):
+            for j in range(self.__len__() - 1):
+                if self.numbers[j] > self.numbers[j + 1]:
+                    self.numbers[j], self.numbers[j + 1] = self.numbers[j + 1], self.numbers[j]
+        return self.numbers
+
+
+
