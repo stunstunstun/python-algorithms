@@ -1,5 +1,3 @@
-n = int(input().strip())
-
 
 def fibonacci(n: int):
     if n == 0 or n == 1:
@@ -12,7 +10,7 @@ def test_fibonacci():
     0 1 1 2 3 ...
     n = 3, output = 2
     """
-    value = fibonacci(n)
+    value = fibonacci(3)
     print(value)
 
 if __name__ == "__main__":
