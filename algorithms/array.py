@@ -1,6 +1,3 @@
-"""
-
-"""
 
 
 class Array(object):
@@ -28,8 +25,8 @@ class Array(object):
         return self.numbers
 
     def bubble_sort(self):
-        for i in range(self.__len__()):
-            for j in range(self.__len__() - 1):
+        for i in range(len(self.numbers)):
+            for j in range(len(self.numbers) - 1):
                 if self.numbers[j] > self.numbers[j + 1]:
                     self.numbers[j], self.numbers[j + 1] = self.numbers[j + 1], self.numbers[j]
         return self.numbers

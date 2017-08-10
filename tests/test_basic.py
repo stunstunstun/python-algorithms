@@ -4,6 +4,18 @@ from algorithms.basic import Basic
 
 class TestBasic(unittest.TestCase):
 
+    def test_range_loop(self):
+        # 1 2 3
+        n = [1, 2]
+        n.append(3)
+        # 3 2 1
+        n = list(reversed(n))
+        self.assertEqual(n, [3, 2, 1])
+        self.assertEqual(n, list(range(3, 0, -1)))
+        # 1 3 5
+        n = [1, 3, 5]
+        self.assertEqual(n, list(range(1, 6, 2)))
+
     def test_factorial(self):
         self.assertEquals(Basic.factorial(5), 120)
 
@@ -24,6 +36,7 @@ class TestBasic(unittest.TestCase):
         self.assertEquals(Basic.time_conversion('07:05:45PM'), '19:05:45')
         self.assertEquals(Basic.time_conversion('12:40:22AM'), '00:40:22')
         self.assertEquals(Basic.time_conversion('12:45:54PM'), '12:45:54')
+
 
 
 
