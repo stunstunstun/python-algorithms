@@ -37,6 +37,12 @@ class TestBasic(unittest.TestCase):
         self.assertEquals(Basic.time_conversion('12:40:22AM'), '00:40:22')
         self.assertEquals(Basic.time_conversion('12:45:54PM'), '12:45:54')
 
+    def test_multiple_sum(self):
+        # 3 5 6 9 10 12 15 18
+        self.assertEqual(Basic.multiple_sum(3, 5, 1000), 233168)
 
+    def test_hash_table(self):
+        self.assertEqual(Basic.ransom_note('give me one grand today night', 'give one grand today'), True)
+        self.assertEqual(Basic.ransom_note('apgo clm w lxkvg mwz elo bg elo lxkvg elo apgo apgo w elo bg', 'elo lxkvg bg mwz clm w'), True)
 
 

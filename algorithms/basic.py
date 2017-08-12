@@ -1,6 +1,7 @@
 """
 Basic algorithms
 """
+from collections import Counter
 
 
 class Basic:
@@ -35,5 +36,27 @@ class Basic:
         elif hours >= 12:
             hours -= 12
         return '{:02}:{:02}:{:02}'.format(hours, mins, seconds)
+
+    @staticmethod
+    def multiple_sum(num1, num2, end):
+        total = 0
+
+        for i in range(1, end):
+            if i % num1 == 0 or i % num2 == 0:
+                total += i
+
+        return total
+
+    @staticmethod
+    def ransom_note(magazine: str, ransom: str):
+        magazine_words = magazine.split(' ')
+        ransom_words = ransom.split(' ')
+        magazine_word_counts = Counter(magazine_words)
+        ransom_word_counts = Counter(ransom_words)
+
+        for word in ransom_words:
+            if magazine_word_counts[word] < ransom_word_counts[word]:
+                return False
+        return True
 
 

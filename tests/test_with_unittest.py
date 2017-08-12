@@ -31,10 +31,13 @@ class TestArray(unittest.TestCase):
         number_of_swaps = array.number_of_swaps
         numbers = array.numbers
 
+        self.assertEqual(array.number_of_swaps, 3)
+        self.assertEqual(array.numbers, [1, 2, 3])
+
         print('Array is sorted in {} swaps.'.format(number_of_swaps))
         print('First Element: {}'.format(numbers[0]))
         print('Last Element: {}'.format(numbers[array.size - 1]))
 
 
 if __name__ == "__main__":
-    TestArray().test_bubble_sort()
+    unittest.main()

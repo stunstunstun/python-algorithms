@@ -26,9 +26,13 @@ class Array(object):
 
     def bubble_sort(self):
         for i in range(len(self.numbers)):
+            swapped = False
             for j in range(len(self.numbers) - 1):
                 if self.numbers[j] > self.numbers[j + 1]:
                     self.numbers[j], self.numbers[j + 1] = self.numbers[j + 1], self.numbers[j]
+                    swapped = True
+            if not swapped:
+                break
         return self.numbers
 
 

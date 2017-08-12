@@ -56,3 +56,16 @@ class String:
             count += abs(number)
 
         return count / 2
+
+    @staticmethod
+    def pangrams(sentence: str):
+        sentence = sentence.lower().replace(' ', '')
+        letter_counts = [0] * (ord('z') - ord('a') + 1)
+
+        for letter in sentence:
+            letter_counts[ord(letter) - ord('a')] += 1
+
+        for count in letter_counts:
+            if count == 0:
+                return False
+        return True

@@ -57,3 +57,7 @@ class TestString(unittest.TestCase):
         self.assertEqual(String.advanced_anagrams('vxxzsqjqsnibgydzlyynqcrayvwjurfsqfrivayopgrxewwruvemzy'), 13)
         self.assertEqual(String.advanced_anagrams('xtnipeqhxvafqaggqoanvwkmthtfirwhmjrbphlmeluvoa'), 13)
         self.assertEqual(String.advanced_anagrams('gqdvlchavotcykafyjzbbgmnlajiqlnwctrnvznspiwquxxsiwuldizqkkaawpyyisnftdzklwagv'), -1)
+
+    def test_pangrams(self):
+        self.assertEqual(String.pangrams('We promptly judged antique ivory buckles for the next prize'), True)
+        self.assertEqual(String.pangrams('We promptly judged antique ivory buckles for the prize'), False)
