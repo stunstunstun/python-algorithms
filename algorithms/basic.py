@@ -40,11 +40,9 @@ class Basic:
     @staticmethod
     def multiple_sum(num1, num2, end):
         total = 0
-
         for i in range(1, end):
             if i % num1 == 0 or i % num2 == 0:
                 total += i
-
         return total
 
     @staticmethod
@@ -53,10 +51,22 @@ class Basic:
         ransom_words = ransom.split(' ')
         magazine_word_counts = Counter(magazine_words)
         ransom_word_counts = Counter(ransom_words)
-
         for word in ransom_words:
             if magazine_word_counts[word] < ransom_word_counts[word]:
                 return False
         return True
+
+    @staticmethod
+    def compare_the_triplets(alice_points, bob_points):
+        alice_score = 0
+        bob_score = 0
+        for i in range(len(alice_points)):
+            if alice_points[i] > bob_points[i]:
+                alice_score += 1
+            elif alice_points[i] == bob_points[i]:
+                pass
+            else:
+                bob_score += 1
+        return ' '.join(map(lambda x: str(x), [alice_score, bob_score]))
 
 

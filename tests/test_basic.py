@@ -45,4 +45,8 @@ class TestBasic(unittest.TestCase):
         self.assertEqual(Basic.ransom_note('give me one grand today night', 'give one grand today'), True)
         self.assertEqual(Basic.ransom_note('apgo clm w lxkvg mwz elo bg elo lxkvg elo apgo apgo w elo bg', 'elo lxkvg bg mwz clm w'), True)
 
+    def test_compare_the_triplets(self):
+        result = Basic.compare_the_triplets([5, 6, 7], [3, 6, 10])
+        self.assertEquals(result, '1 1')
+
 

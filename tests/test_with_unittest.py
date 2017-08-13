@@ -1,3 +1,7 @@
+"""
+available by this command
+$ python3 tests/test_with_unittest.py
+"""
 import unittest
 
 
