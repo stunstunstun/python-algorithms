@@ -5,7 +5,7 @@ from algorithms.dynamic_fibo import DynamicFibo
 class TestDynamicFibo(unittest.TestCase):
 
     def test_dynamic_fibo(self):
-        fibo = DynamicFibo()
+        fibo = DynamicFibo(100)
 
         self.assertEquals(fibo.value(0), 0)
         self.assertEquals(fibo.value(1), 1)

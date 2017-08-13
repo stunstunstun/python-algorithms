@@ -20,23 +20,16 @@ class Node:
         self.right = None
 
     @classmethod
-    def check_bst(cls, root):
-        if root.left and root.left.value >= root.value:
-            return False
-        if root.right and root.right.value <= root.value:
-            return False
-        return True
+    def check_bst(cls, root, min_value, max_value):
+        if root is None:
+            return True
+        return (
+            min_value < root.value < max_value and
+            Node.check_bst(root.left, min_value, root.value) and
+            Node.check_bst(root.right, root.value, max_value))
 
     @classmethod
     def is_binary_search_tree(cls, root):
-        if not cls.check_bst(root):
-            return False
-        if root.left:
-            cls.is_binary_search_tree(root.left)
-        if root.right:
-            cls.is_binary_search_tree(root.right)
-
-
-        return True
+        return Node.check_bst(root, -float('inf'), float('inf'))
 
 

@@ -28,6 +28,27 @@ class TestArray(unittest.TestCase):
     def test_bubble_sort(self):
         self.assertEqual(self.array.bubble_sort(), [1, 2, 3, 11, 22, 29, 50, 72, 98, 99])
 
+    def test_selection_sort_asc(self):
+        self.assertEqual(self.array.selection_sort_asc(), [1, 2, 3, 11, 22, 29, 50, 72, 98, 99])
+
+    def test_selection_sort_desc(self):
+        self.assertEqual(self.array.selection_sort_desc(), [99, 98, 72, 50, 29, 22, 11, 3, 2, 1])
+
+    def test_selection_min(self):
+        self.assertEqual(self.array.selection_min(1), 1)
+        self.assertEqual(self.array.selection_min(2), 2)
+        self.assertEqual(self.array.selection_min(3), 3)
+        self.assertEqual(self.array.selection_min(4), 11)
+        self.assertEqual(self.array.selection_min(5), 22)
+
+    def test_binary_search_iterative(self):
+        self.array.bubble_sort()
+        self.assertEqual(self.array.binary_search_iterative(11), 3)
+
+    def test_binary_search_recursive(self):
+        self.array.bubble_sort()
+        self.assertEqual(self.array.binary_search(11), 3)
+
     def tearDown(self):
         """
         Print array elements

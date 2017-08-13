@@ -21,4 +21,4 @@ class TestTree(unittest.TestCase):
         tree.left.right = Node(4)
         tree.right.left = Node(5)
         tree.right.right = Node(7)
-        self.assertEqual(Node.is_binary_search_tree(tree), True)
+        self.assertEqual(Node.is_binary_search_tree(tree), False)
