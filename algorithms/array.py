@@ -1,3 +1,9 @@
+from enum import Enum
+
+
+class SortType(Enum):
+    ASC = 1
+    DESC = 2
 
 
 class Array(object):
@@ -37,42 +43,35 @@ class Array(object):
             print('{}'.format(self.numbers))
         return self.numbers
 
-    def selection_sort_asc(self):
-        print('selection_sort(asc) = {}'.upper().format(self.numbers))
+    def selection_sort(self, sort_type=SortType.ASC):
+        print('selection_sort(type={}) = {}'.upper().format(sort_type, self.numbers))
         for i in range(len(self.numbers)):
-            min_index = i
+            index = i
             for j in range(i, len(self.numbers)):
-                if self.numbers[min_index] > self.numbers[j]:
-                    min_index = j
-            self.numbers[i], self.numbers[min_index] = self.numbers[min_index], self.numbers[i]
-            print('min_index[{}] {} = {}'.format(min_index, i, self.numbers))
+                if sort_type == SortType.ASC and self.numbers[index] > self.numbers[j]:
+                    index = j
+                if sort_type == SortType.DESC and self.numbers[index] < self.numbers[j]:
+                    index = j
+            self.numbers[i], self.numbers[index] = self.numbers[index], self.numbers[i]
+            print('index[{}] {} = {}'.format(index, i, self.numbers))
         return self.numbers
 
-    def selection_sort_desc(self):
-        print('selection_sort(desc) = {}'.upper().format(self.numbers))
+    def selection(self, k, sort_type=SortType.ASC):
         for i in range(len(self.numbers)):
-            max_index = i
+            index = i
             for j in range(i, len(self.numbers)):
-                if self.numbers[max_index] < self.numbers[j]:
-                    max_index = j
-            self.numbers[i], self.numbers[max_index] = self.numbers[max_index], self.numbers[i]
-            print('max_index[{}] {} = {}'.format(max_index, i, self.numbers))
-        return self.numbers
-
-    def selection_min(self, k):
-        for i in range(len(self.numbers)):
-            min_index = i
-            for j in range(i, len(self.numbers)):
-                if self.numbers[min_index] > self.numbers[j]:
-                    min_index = j
-            self.numbers[i], self.numbers[min_index] = self.numbers[min_index], self.numbers[i]
+                if sort_type == SortType.ASC and self.numbers[index] > self.numbers[j]:
+                    index = j
+                if sort_type == SortType.DESC and self.numbers[index] < self.numbers[j]:
+                    index = j
+            self.numbers[i], self.numbers[index] = self.numbers[index], self.numbers[i]
             if i == k - 1:
                 return self.numbers[i]
 
     def binary_search_recursive(self, x, left, right):
         if left > right:
             return -1
-        mid = int(left + ((right - left) / 2))
+        mid = int(left + (right - left) / 2)
         if self.numbers[mid] == x:
             return mid
         elif x < self.numbers[mid]:
@@ -85,19 +84,38 @@ class Array(object):
     def binary_search(self, x):
         return self.binary_search_recursive(x, 0, len(self.numbers) - 1)
 
-    def binary_search_iterative(self, x):
+    @staticmethod
+    def binary_search_iterative(numbers, x):
         left = 0
-        right = len(self.numbers) - 1
-        mid = int((left + right) / 2)
+        right = len(numbers) - 1
+        mid = int(left + (right - left) / 2)
         while left <= right:
-            if self.numbers[mid] == x:
+            if numbers[mid] == x:
                 return mid
-            elif x < self.numbers[mid]:
+            elif x < numbers[mid]:
                 right = mid - 1
-                mid = int((left + right) / 2)
-            elif x > self.numbers[mid]:
+                mid = int(left + (right - left) / 2)
+            elif x > numbers[mid]:
                 left = mid + 1
-                mid = int((left + right) / 2)
+                mid = int(left + (right - left) / 2)
             else:
                 return -1
         return -1
+
+    @staticmethod
+    def index(flavors: list, value, exclude):
+        for i in range(0, len(flavors)):
+            if flavors[i] == value and i != exclude:
+                return i
+        return -1
+
+    @staticmethod
+    def ice_cream_parlor(money, flavors: list):
+        sorted_flavors = sorted(flavors)
+        for i, flavor in enumerate(sorted_flavors):
+            complement = money - flavor
+            location = Array.binary_search_iterative(sorted_flavors, complement)
+            if 0 <= location < len(sorted_flavors):
+                a = Array.index(flavors, sorted_flavors[i], -1)
+                b = Array.index(flavors, complement, a)
+                return ' '.join(map(lambda x: str(x), [min(a + 1, b + 1), max(a + 1, b + 1)]))
