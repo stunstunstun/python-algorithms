@@ -4,6 +4,12 @@ from algorithms.math import Math
 
 class TestMath(unittest.TestCase):
 
+    def test_format(self):
+        self.assertEqual(Math.bin(10), '1010')
+        self.assertEqual(Math.bin(255), '11111111')
+        self.assertEqual(Math.oct(10), '12')
+        self.assertEqual(Math.oct(255), '377')
+
     def test_prime(self):
         self.assertEqual(Math.prime(0), False)
         self.assertEqual(Math.prime(1), False)

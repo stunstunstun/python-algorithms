@@ -29,19 +29,19 @@ class Array:
 class TestArray(unittest.TestCase):
 
     def test_bubble_sort(self):
-        array = Array(3, [3, 2, 1])
+        numbers = [3, 10, 9, 2, 100, 1, 99, 1000, 232, 7]
+        print(numbers)
+        array = Array(10, numbers)
         array.bubble_sort()
 
         number_of_swaps = array.number_of_swaps
         numbers = array.numbers
 
-        self.assertEqual(array.number_of_swaps, 3)
-        self.assertEqual(array.numbers, [1, 2, 3])
+        self.assertEqual(array.number_of_swaps, 17)
+        self.assertEqual(array.numbers, [1, 2, 3, 7, 9, 10, 99, 100, 232, 1000])
 
         print('Array is sorted in {} swaps.'.format(number_of_swaps))
-        print('First Element: {}'.format(numbers[0]))
-        print('Last Element: {}'.format(numbers[array.size - 1]))
-
+        print(array.numbers)
 
 if __name__ == "__main__":
     unittest.main()

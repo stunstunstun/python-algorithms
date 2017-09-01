@@ -3,6 +3,24 @@
 class Search:
 
     @staticmethod
+    def binary_search(numbers, x):
+        return Search.binary_search_recursive(numbers, x, 0, len(numbers) - 1)
+
+    @staticmethod
+    def binary_search_recursive(numbers, x, left, right):
+        if left > right:
+            return -1
+        mid = int(left + (right - left) / 2)
+        if numbers[mid] == x:
+            return mid
+        elif x < numbers[mid]:
+            return Search.binary_search_recursive(numbers, x, left, mid - 1)
+        elif x > numbers[mid]:
+            return Search.binary_search_recursive(numbers, x, mid + 1, right)
+        else:
+            return -1
+
+    @staticmethod
     def binary_search_iterative(numbers, x):
         left = 0
         right = len(numbers) - 1

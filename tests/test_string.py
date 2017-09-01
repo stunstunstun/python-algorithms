@@ -1,4 +1,5 @@
 import unittest
+import binascii
 from algorithms.string import String
 
 
@@ -15,17 +16,32 @@ class TestString(unittest.TestCase):
         self.assertEqual(chr(44032), '가')
 
     def test_unicode(self):
+        for i in range(ord(u'A'), ord(u'Z'), 1):
+            print('{} {:03} {} {}'.format(chr(i), i, hex(i).upper(), bin(i)))
         for i in range(ord(u'가'), ord(u'겮'), 1):
             print('{} {:03} {} {}'.format(chr(i), i, hex(i).upper(), bin(i)))
         self.assertEqual(hex(ord(u'가')), '0xac00')
 
-        b = '가'.encode(encoding='utf-8')
-        self.assertEqual(len(b), 3)
-        b = '가'.encode(encoding='euc-kr')
-        self.assertEqual(len(b), 2)
-        b = '가'.encode(encoding='utf-16')
+        b = u'A'.encode(encoding='utf-8')
+        print('{} {} {}'.format('A', 'utf-8', binascii.hexlify(b)))
+        self.assertEqual(len(b), 1)
+        b = u'A'.encode(encoding='euc-kr')
+        print('{} {} {}'.format('A', 'euc-kr', binascii.hexlify(b)))
+        self.assertEqual(len(b), 1)
+        b = u'A'.encode(encoding='utf-16')
+        print('{} {} {}'.format('A', 'utf-16', binascii.hexlify(b)))
         self.assertEqual(len(b), 4)
-        b = '가'.encode()
+
+        b = u'가'.encode(encoding='utf-8')
+        print('{} {} {}'.format('가', 'utf-8', binascii.hexlify(b)))
+        self.assertEqual(len(b), 3)
+        b = u'가'.encode(encoding='euc-kr')
+        print('{} {} {}'.format('가', 'euc-kr', binascii.hexlify(b)))
+        self.assertEqual(len(b), 2)
+        b = u'가'.encode(encoding='utf-16')
+        print('{} {} {}'.format('가', 'utf-16', binascii.hexlify(b)))
+        self.assertEqual(len(b), 4)
+        b = u'가'.encode()
         self.assertEqual(len(b), 3)
 
     def test_check_anagrams(self):

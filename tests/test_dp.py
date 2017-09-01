@@ -17,3 +17,4 @@ class TestDP(unittest.TestCase):
         self.assertEquals(dp.fibonacci(8), 21)
         self.assertEquals(dp.fibonacci(9), 34)
         self.assertEquals(dp.fibonacci(31), 1346269)
+        self.assertEquals(dp.fibonacci(40), 102334155)

@@ -4,6 +4,9 @@ from algorithms.search import Search
 
 class TestSearch(unittest.TestCase):
 
+    def test_binary_search_recursive(self):
+        self.assertEqual(Search.binary_search([1, 2, 3, 11, 22, 29, 50, 72, 98, 99], 11), 3)
+
     def test_binary_search_iterative(self):
         self.assertEqual(Search.binary_search_iterative([1, 2, 3, 11, 22, 29, 50, 72, 98, 99], 11), 3)
         self.assertEqual(Search.binary_search_iterative([1, 2, 3, 4, 5], 3), 2)

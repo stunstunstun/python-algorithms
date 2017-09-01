@@ -1,4 +1,4 @@
-
+import copy
 
 class Stack:
     def __init__(self, max_size=10):
@@ -21,8 +21,7 @@ class Stack:
         return item
 
     def expand(self):
-        self.max_size = self.max_size * 2
-        new_items = [None] * self.max_size
+        new_items = [None] * (self.max_size * 2)
         for index, item in enumerate(self.items):
             new_items[index] = item
         self.items = new_items
