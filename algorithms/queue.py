@@ -1,11 +1,11 @@
-from collections import deque
 
 
 class AbstractQueue(object):
 
     def __init__(self):
-        self.max_size = 0
-        self.items = None
+        self.head = 0
+        self.size = 0
+        self.items = []
 
     def put(self):
         raise NotImplementedError()
@@ -14,28 +14,32 @@ class AbstractQueue(object):
         raise NotImplementedError()
 
     def qsize(self):
-        return len(self.items)
+        return self.size;
 
     def empty(self):
         return not self.qsize()
 
     def full(self):
-        return self.qsize() == self.max_size
+        return self.qsize() == self.size
 
 
 class Queue(AbstractQueue):
 
-    def __init__(self, max_size=10):
-        self.max_size = max_size
-        self.items = deque([])
+    def __init__(self, capacity=10):
+        self.head = 0
+        self.size = 0
+        self.items = [None] * capacity
 
     def put(self, item):
-        self.items.append(item)
+        self.items[(self.head + self.size) % len(self.items)] = item
+        self.size += 1
 
     def get(self):
         if self.empty():
             raise IndexError('Queue is empty')
-        return self.items.popleft()
-
+        self.size -= 1
+        result = self.items[self.head]
+        self.head = (self.head + 1) % len(self.items)
+        return result
 
 

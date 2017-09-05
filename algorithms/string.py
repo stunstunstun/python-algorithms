@@ -12,16 +12,29 @@ UTF-16 - 2 bytes+ Korean 4 bytes
 class String:
 
     @classmethod
+    def reverse(cls, word: str):
+        if (word is None) or (word == ''):
+            return None
+        start = 0
+        end = len(word) - 1
+        char_list = list(word)
+        while start < end:
+            temp = char_list[start]
+            char_list[start] = char_list[end]
+            char_list[end] = temp
+            start += 1
+            end -= 1
+        return ''.join(char_list)
+
+    @classmethod
     def check_anagrams(cls, str1: str, str2: str):
+        if str1 == '' or str1 is None or str2 == '' or str2 is None:
+            return False
         if len(str1) != len(str2):
             return False
         str1 = ''.join(sorted(str1))
         str2 = ''.join(sorted(str2))
-
-        if str1 == str2:
-            return True
-        else:
-            return False
+        return str1 == str2
 
     @classmethod
     def making_anagrams(cls, str1: str, str2: str):

@@ -33,7 +33,6 @@ class Sorting:
                 if sort_type == SortType.DESC and self.numbers[index] < self.numbers[j]:
                     index = j
             self.numbers[i], self.numbers[index] = self.numbers[index], self.numbers[i]
-            print('index[{}] {} = {}'.format(index, i, self.numbers))
         return self.numbers
 
     def selection(self, k, sort_type=SortType.ASC):
@@ -87,6 +86,6 @@ class Sorting:
     @staticmethod
     def array_copy(src: list, src_pos: int, dest: list, dest_pos: int, size: int):
         for i in range(size):
-            dest[i + dest_pos] = src[i + src_pos]
+            dest[dest_pos + i] = src[src_pos + i]
 
 

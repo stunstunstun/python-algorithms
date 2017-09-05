@@ -5,6 +5,11 @@ from algorithms.string import String
 
 class TestString(unittest.TestCase):
 
+    def test_reverse(self):
+        self.assertEqual(String.reverse('abcde'), 'edcba')
+        self.assertEqual(String.reverse(None), None)
+        self.assertEqual(String.reverse(''), None)
+
     def test_binary(self):
         self.assertEqual(int('1010', 2), 10)
         self.assertEqual(hex(255), '0xff')
@@ -45,8 +50,13 @@ class TestString(unittest.TestCase):
         self.assertEqual(len(b), 3)
 
     def test_check_anagrams(self):
-        result = String.check_anagrams('abc', 'cab')
-        self.assertEqual(result, True)
+        self.assertEqual(String.check_anagrams('abc', 'cab'), True)
+        self.assertEqual(String.check_anagrams('bat', 'tab'), True)
+        self.assertEqual(String.check_anagrams('abc', 'eft'), False)
+        self.assertEqual(String.check_anagrams('ba', 'tab'), False)
+        self.assertEqual(String.check_anagrams('abc', 'cb'), False)
+        self.assertEqual(String.check_anagrams('', ''), False)
+        self.assertEqual(String.check_anagrams(None, None), False)
 
     def test_making_anagrams(self):
         self.assertEqual(String.making_anagrams('cde', 'abc'), 4)

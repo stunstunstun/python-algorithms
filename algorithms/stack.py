@@ -1,4 +1,4 @@
-import copy
+
 
 class Stack:
     def __init__(self, max_size=10):
