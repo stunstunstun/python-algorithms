@@ -82,3 +82,37 @@ class String:
             if count == 0:
                 return False
         return True
+
+    @staticmethod
+    def is_iterative_pattern(sentence: str):
+        if sentence is None or sentence == '':
+            return False
+        if len(sentence) == 1:
+            return True
+        divide_number = 2
+        while divide_number <= len(sentence):
+            if len(sentence) % divide_number != 0:
+                divide_number += 1
+                continue
+            parts = String.split(sentence, divide_number)
+            divide_number += 1
+            if String.is_matched(parts):
+                return True
+        return False
+
+    @staticmethod
+    def split(sentence: str, divide_number: int):
+        size = int(len(sentence) / divide_number)
+        array = []
+        for i in range(divide_number):
+            start = i * size
+            end = (i + 1) * size
+            array.append(sentence[start:end])
+        return array
+
+    @staticmethod
+    def is_matched(parts: list):
+        for i in range(1, len(parts)):
+            if parts[i] != parts[0]:
+                return False
+        return True

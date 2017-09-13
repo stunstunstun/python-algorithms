@@ -4,6 +4,11 @@ from algorithms.math import Math
 
 class TestMath(unittest.TestCase):
 
+    def test_lonely_integer(self):
+        self.assertEqual(Math.lonely_integer([0, 0, 1, 2, 1]), 2)
+        self.assertEqual(Math.lonely_integer([1]), 1)
+        self.assertEqual(Math.lonely_integer([1, 1, 2]), 2)
+
     def test_format(self):
         self.assertEqual(Math.bin(10), '1010')
         self.assertEqual(Math.bin(255), '11111111')

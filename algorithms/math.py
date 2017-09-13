@@ -3,6 +3,13 @@
 class Math(object):
 
     @staticmethod
+    def lonely_integer(numbers: list):
+        value = 0
+        for number in numbers:
+            value = value ^ number
+        return value
+
+    @staticmethod
     def bin(value: int):
         buffer = [''] * 16
         char_index = len(buffer)

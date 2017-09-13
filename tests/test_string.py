@@ -87,3 +87,14 @@ class TestString(unittest.TestCase):
     def test_pangrams(self):
         self.assertEqual(String.pangrams('We promptly judged antique ivory buckles for the next prize'), True)
         self.assertEqual(String.pangrams('We promptly judged antique ivory buckles for the prize'), False)
+
+    def test_matched_pattern(self):
+        self.assertEqual(String.is_iterative_pattern('a'), True)
+        self.assertEqual(String.is_iterative_pattern('aaa'), True)
+        self.assertEqual(String.is_iterative_pattern('abcabc'), True)
+        self.assertEqual(String.is_iterative_pattern('ababab'), True)
+
+        self.assertEqual(String.is_iterative_pattern(''), False)
+        self.assertEqual(String.is_iterative_pattern('ab'), False)
+        self.assertEqual(String.is_iterative_pattern('ababc'), False)
+
