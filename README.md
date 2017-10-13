@@ -1,7 +1,7 @@
 
 ## awesome-algorithms
 
-`awesome-algorithms`은 스터디를 위한 공간입니다.
+`awesome-algorithms`은 알고리즘 스터디를 위한 공간입니다.
 
 ## 스터디는 어떻게 진행되나요?
 
@@ -9,6 +9,11 @@
 - 이 스터디에는 완주라는 것은 없습니다. 언제든지 부담이 되면 잠시 내려 놓고 다음 단계의 스터디에 다시 참여하세요.
 - 매 주 아래의 참고 사이트의 문제를 선정하고 각자 풀이한 문제에 대한 이슈를 생성합니다.
 - 이슈는 멤버 누구라도 원한다면 리뷰할 수 있습니다. 하나 이상의 리뷰가 완료되면 Repository에 작성한 코드를 머지합니다.
+
+## How to prepare coding interviews
+
+- https://careers.google.com/how-we-hire/interview/
+- https://www.facebook.com/notes/facebook-engineering/get-that-job-at-facebook/10150964382448920/
 
 ## 참고 사이트
 
