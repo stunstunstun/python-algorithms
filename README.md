@@ -5,8 +5,8 @@
 
 ## How to prepare coding interviews
 
-- https://careers.google.com/how-we-hire/interview/
-- https://www.facebook.com/notes/facebook-engineering/get-that-job-at-facebook/10150964382448920/
+- [Google](https://careers.google.com/how-we-hire/interview/)
+- [Facebook](https://www.facebook.com/notes/facebook-engineering/get-that-job-at-facebook/10150964382448920/)
 
 ## 참고 사이트
 
