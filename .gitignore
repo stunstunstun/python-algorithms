@@ -1,3 +1,4 @@
+__pycache__/
 *.swp
 .DS_Store
 *.pyc
@@ -10,4 +11,5 @@ dist/
 *.ropeproject/
 docs/_build
 .idea/*
-.cache/
+.cache/*
+.vscode/*

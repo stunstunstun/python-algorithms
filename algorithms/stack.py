@@ -21,7 +21,8 @@ class Stack:
         return item
 
     def expand(self):
-        new_items = [None] * (self.max_size * 2)
+        self.max_size = self.max_size * 2
+        new_items = [None] * (self.max_size)
         for index, item in enumerate(self.items):
             new_items[index] = item
         self.items = new_items

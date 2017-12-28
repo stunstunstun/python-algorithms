@@ -7,7 +7,7 @@ class TestArray(unittest.TestCase):
     Create class instance
     """
     def setUp(self):
-        self.array = Array('1 11 98 3 50 72 22 29 99 2')
+        self.array = Array([1, 11, 98, 3, 50, 72, 22, 29, 99, 2])
 
     def test_sum(self):
         """

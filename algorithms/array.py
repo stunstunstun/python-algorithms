@@ -1,8 +1,8 @@
 
 
 class Array(object):
-    def __init__(self, array_string):
-        self.numbers = [int(number) for number in array_string.split(' ')]
+    def __init__(self, numbers):
+        self.numbers = numbers
 
     def __len__(self):
         return len(self.numbers)

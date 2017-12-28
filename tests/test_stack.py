@@ -8,10 +8,10 @@ class TestStack(unittest.TestCase):
         stack = Stack()
         stack.push(2)
         stack.push(4)
-        stack.push(6)
+        stack.push(6)                               # 2 4 6
 
-        self.assertEqual(stack.pop(), 6)
-        self.assertEqual(stack.is_empty(), False)
+        self.assertEqual(stack.pop(), 6)            # 2 4
+        self.assertEqual(stack.is_empty(), False)   
         self.assertEqual(stack.top, 1)
         self.assertEqual(stack.has(4), True)
         self.assertEqual(stack.is_full(), False)
