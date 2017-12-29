@@ -95,7 +95,7 @@ $ python3 -m unittest
 
 ## Testing
 
-#### Time Complexity와 Space complexity
+#### Time Complexity와 Space Complexity
 
 알고리듬을 테스트하면서 가장 고려할 요소는 Time Complexity와 Space complexity이다.
 
@@ -110,6 +110,15 @@ Time Complexity(시간 복잡도)는 문제를 해결하는데 걸리는 시간�
 #### Big-O Notations
 
 <img src='https://camo.githubusercontent.com/874181d7b840a494fe94a11cc13c1fad5d372217/68747470733a2f2f6170656c6261756d2e66696c65732e776f726470726573732e636f6d2f323031312f31302f796161636f766170656c6261756d6269676f706c6f742e6a7067' width='400' />
+
+Big-O | Operations for 10 things | Operations for 100 things
+--|--|--
+O(1) | 1 | 1
+O(log n) | 3 | 7
+O(n log n) | 30 | 700 |
+0(n^2) | 100 | 10000 |
+
+> Solutions - https://www.martinkysel.com/codility-solutions/
 
 `O(1) - Constant Time`
 
@@ -136,7 +145,7 @@ Time Complexity(시간 복잡도)는 문제를 해결하는데 걸리는 시간�
 
 > 예를 들면, 이진 트리 정렬은 n 크기의 배열 각 요소를 하나하나 삽입하여 이진 트리를 만든다. 자가 균형 이진 탐색 트리의 삽입 연산은 O(log n)시간이 걸리기 때문에, 전체 알고리즘은 Linearithmic time이 걸린다.
 
-`O(n2) - Quadratic Time`
+`O(n^2) - Quadratic Time`
 
 - 입력 데이터의 양에 따라 수행 시간은 제곱에 비례한다.
 
