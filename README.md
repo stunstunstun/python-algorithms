@@ -153,7 +153,9 @@ O(n log n) | 30 | 700 |
 
 > Bubble Sort
 
-#### Space complexity
+#### Space Complexity
+
+#### `이하 컨텐츠를 채우는데 함께하고 싶은 분은 PR을 보내주세요! 🤗`
 
 ## Algorithm Solving Strategies
 
