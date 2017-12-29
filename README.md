@@ -71,7 +71,8 @@ $ python3 -m unittest
 
 - [Testing](#testing)
   - [Time Complexity](#time-complexity)
-  - [Big-O](#big-o)
+  - [Big-O Notations](#big-o-notations)
+  - [Space Complexity](#space-complexity)
 - [Algorithm Solving Strategies](#algorithm-solving-strategies)
 	- [Divide and Conquer](#divide-and-conquer)
 	- [Dynamic Programming](#dynamic-programming)
@@ -94,23 +95,54 @@ $ python3 -m unittest
 
 ## Testing
 
+#### Time Complexity와 Space complexity
+
+알고리듬을 테스트하면서 가장 고려할 요소는 Time Complexity와 Space complexity이다.
+
 #### Time Complexity
 
-#### Big-O
+<img src='https://i1.wp.com/texblog.org/Wordpress/wp-content/uploads/2014/06/big-o-example-latex.png' width='400' />
+
+Time Complexity(시간 복잡도)는 문제를 해결하는데 걸리는 시간과 입력의 함수 관계를 표현한다. 얼마나 많은 데이터를 입력 받았는지 그에 따라 CPU는 얼마나 사용하는지 수행 시간은 얼마나 걸리는지를 표현할 수 있다.
+
+가장 많이 쓰이는 표현법으로는 알고리듬의 실행 시간의 상한을 나타내는 `Big-O` 표기법이 있다.
+
+#### Big-O Notations
+
+<img src='https://camo.githubusercontent.com/874181d7b840a494fe94a11cc13c1fad5d372217/68747470733a2f2f6170656c6261756d2e66696c65732e776f726470726573732e636f6d2f323031312f31302f796161636f766170656c6261756d6269676f706c6f742e6a7067' width='400' />
 
 `O(1) - Constant Time`
 
+입력되는 데이터양과 상관없이 일정한 실행 시간을 가진다.
+
 `O(log n) - Logarithmic Time`
+
+- 입력 데이터 양이 많아져도 수행 시간이 조금씩 늘어난다.
+- 시간에 비례하여, 탐색 가능한 데이터양이 2의 n승이 된다.
+
+> Binary Search
+
 
 `O(n) - Linear Time`
 
+- 입력 데이터 양에 따라 수행 시간이 정비례한다.
+
+> 선형 탐색, for 문을 통한 탐색을 생각하면 되겠다.
+
 `O(n log n) - Linearithmic time`
+
+- 입력 데이터 양이 n배 많이 진다면, 수행 시간은 n배 보다 조금 더 많아 진다.
+- 정비례하지 않는다.
+
+> 예를 들면, 이진 트리 정렬은 n 크기의 배열 각 요소를 하나하나 삽입하여 이진 트리를 만든다. 자가 균형 이진 탐색 트리의 삽입 연산은 O(log n)시간이 걸리기 때문에, 전체 알고리즘은 Linearithmic time이 걸린다.
 
 `O(n2) - Quadratic Time`
 
-`O(2n) - Exponential Time`
+- 입력 데이터의 양에 따라 수행 시간은 제곱에 비례한다.
 
-`O(n!) - Factorial Time`
+> Bubble Sort
+
+#### Space complexity
 
 ## Algorithm Solving Strategies
 
