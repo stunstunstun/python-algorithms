@@ -1,5 +1,5 @@
 import unittest
-from algorithms.stack import Stack
+from algorithms.stack import Stack, balanced_brackets
 
 
 class TestStack(unittest.TestCase):
@@ -8,9 +8,9 @@ class TestStack(unittest.TestCase):
         stack = Stack()
         stack.push(2)
         stack.push(4)
-        stack.push(6)                               # 2 4 6
+        stack.push(6)
 
-        self.assertEqual(stack.pop(), 6)            # 2 4
+        self.assertEqual(stack.pop(), 6)
         self.assertEqual(stack.is_empty(), False)   
         self.assertEqual(stack.top, 1)
         self.assertEqual(stack.has(4), True)
@@ -27,8 +27,8 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.top, stack.max_size - 1)
 
     def test_balanced_brackets(self):
-        self.assertEqual(Stack.balanced_brackets('{[()]}'), True)
-        self.assertEqual(Stack.balanced_brackets('}][}}(}][))]'), False)
-        self.assertEqual(Stack.balanced_brackets('[](){()}'), True)
-        self.assertEqual(Stack.balanced_brackets('({}([][]))[]()'), True)
-        self.assertEqual(Stack.balanced_brackets('{)[](}]}]}))}(())('), False)
+        self.assertEqual(balanced_brackets('{[()]}'), True)
+        self.assertEqual(balanced_brackets('}][}}(}][))]'), False)
+        self.assertEqual(balanced_brackets('[](){()}'), True)
+        self.assertEqual(balanced_brackets('({}([][]))[]()'), True)
+        self.assertEqual(balanced_brackets('{)[](}]}]}))}(())('), False)

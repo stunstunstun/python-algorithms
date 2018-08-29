@@ -36,18 +36,16 @@ class Stack:
     def has(self, value):
         return value in self.items
 
-    @staticmethod
-    def balanced_brackets(expression: str):
-        pairs = {"{": "}", "[": "]", "(": ")"}
+BRACKET_PAIRS = {"{": "}", "[": "]", "(": ")"}
 
-        stack = Stack()
-        for char in expression:
-            if char in pairs:
-                stack.push(pairs[char])
-            elif not stack.is_empty() and stack.has(char):
-                stack.pop()
-            else:
-                return False
-        return stack.is_empty()
-
+def balanced_brackets(expression: str):
+    stack = Stack()
+    for char in expression:
+        if char in BRACKET_PAIRS:
+            stack.push(BRACKET_PAIRS[char])
+        elif not stack.is_empty() and stack.has(char):
+            stack.pop()
+        else:
+            return False
+    return stack.is_empty()
 
