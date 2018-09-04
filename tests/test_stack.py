@@ -27,6 +27,10 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.top, stack.max_size - 1)
 
     def test_balanced_brackets(self):
+        self.assertEqual(balanced_brackets(0), False)
+        self.assertEqual(balanced_brackets(''), False)
+        self.assertEqual(balanced_brackets('aabb'), False)
+        self.assertEqual(balanced_brackets('{[(}])'), False)
         self.assertEqual(balanced_brackets('{[()]}'), True)
         self.assertEqual(balanced_brackets('}][}}(}][))]'), False)
         self.assertEqual(balanced_brackets('[](){()}'), True)

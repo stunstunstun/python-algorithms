@@ -39,6 +39,8 @@ class Stack:
 BRACKET_PAIRS = {"{": "}", "[": "]", "(": ")"}
 
 def balanced_brackets(expression: str):
+    if not type(expression) is str or not expression:
+        return False
     stack = Stack()
     for char in expression:
         if char in BRACKET_PAIRS:
