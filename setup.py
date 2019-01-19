@@ -8,13 +8,12 @@ def long_description():
         readme = f.read()
     return readme
 
-setup(name='awesome-algorithms',
-      version='0.1.0',
+setup(name='python-algorithms',
+      version='1.0.0',
       description='Practices to solve problems with Python',
       long_description=long_description(),
-      url='https://github.com/stunstunstun/awesome-algorithms',
+      url='https://github.com/stunstunstun/python-algorithms',
       author='stunstunstun',
-      author_email='agileboys.com@gmail.com',
       license='MIT',
       packages=find_packages(),
       python_requires='>=3',

@@ -1,5 +1,5 @@
 
-## awesome-algorithms
+## python-algorithms
 
 이 공간은 Problem Solving 이하 PS 스터디를 위한 공간입니다.
 
